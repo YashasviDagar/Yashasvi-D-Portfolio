@@ -5,12 +5,11 @@ import { FaGithub, FaInfo, FaLinkedin } from "react-icons/fa";
 const Navbar = () => {
   // state for mobile menu open/close
   const [isOpen, setIsOpen] = useState(false);
-
   // track which menu item is currently active/highlighted
   const [activeSection, setActiveSection] = useState("");
-
   // track whether user has scrolled or not
   const [isScrolled, setIsScrolled] = useState(false);
+
 
   // Checking the scrolled state and then changing the bg from transparent to something else
   useEffect(() => {
@@ -33,6 +32,12 @@ const Navbar = () => {
 
     // whenever I click on a icon the navbar goes away example in mobile view
     setIsOpen(false);
+
+    // scroll to the section smoothly
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   // navbar menu items future me easy edit/add/remove ke liye array me
