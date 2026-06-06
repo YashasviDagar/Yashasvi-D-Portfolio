@@ -33,26 +33,19 @@ import vercelLogo from "./assets/tech_logo/vercel.png";
 import postgreLogo from "./assets/tech_logo/postgre.png";
 import csharpLogo from "./assets/tech_logo/csharp.png";
 
-// Experience Section Logo's (Currently Commented Out)
-// import webverseLogo from './assets/company_logo/webverse_logo.png';
-// import agcLogo from './assets/company_logo/agc_logo.png';
-// import newtonschoolLogo from './assets/company_logo/newtonschool_logo.png';
+// Experience Section Logo's 
+
 
 // Education Section Logo's
 import kvsLogo from "./assets/education_logo/kvs.png";
 import vitLogo from "./assets/education_logo/vit.png";
 import chandramLogo from "./assets/education_logo/chandram.png";
 
-// Project Section Logo's (Currently Commented Out)
-// import githubdetLogo from './assets/work_logo/github_det.png';
-// import csprepLogo from './assets/work_logo/cs_prep.png';
-// import movierecLogo from './assets/work_logo/movie_rec.png';
-// import taskremLogo from './assets/work_logo/task_rem.png';
-// import npmLogo from './assets/work_logo/npm.png';
-// import webverLogo from './assets/work_logo/web_dig.png';
-// import cmLogo from './assets/work_logo/cm.png';
-// import imagesearchLogo from './assets/work_logo/image_search.png';
-// import removebgLogo from './assets/work_logo/remove_bg.png';
+// Project Section Logo's
+import iykykLogo from "./assets/work_logo/iykyklogo_bg.png";
+import stupifyLogo from "./assets/work_logo/stupify.png";
+import infinityLogo from "./assets/work_logo/logo.png";
+
 
 export const SkillsInfo = [
   {
@@ -112,52 +105,26 @@ export const SkillsInfo = [
 ];
 
 export const experiences = [
-  {
-    id: 0,
-    img: typeof webverseLogo !== "undefined" ? webverseLogo : null,
-    role: "Fullstack Developer",
-    company: "Webverse Digital",
-    date: "April 2024 - Present",
-    desc: "Developed dynamic and scalable web applications using the MERN stack, handling both frontend and backend development. Collaborated with cross-functional teams to build responsive UI, implement RESTful APIs, and optimize application performance in an agile environment.",
-    skills: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React JS",
-      "TypeScript",
-      "Node JS",
-      "Tailwind CSS",
-      "MongoDb",
-      "Redux",
-      " Next Js",
-    ],
-  },
-  {
-    id: 1,
-    img: typeof agcLogo !== "undefined" ? agcLogo : null,
-    role: "Fullstack Engineer",
-    company: "Agumentik Group of Companies",
-    date: "July 2023 - March 2024",
-    desc: "Contributed to innovative projects as a Fullstack Engineer, leading both frontend and backend development using technologies such as HTML, CSS, JavaScript, PHP, SQL, Bootstrap, and ReactJS. Worked closely with the team to deliver responsive, high-performance web applications and improve user experience through seamless integration of various technologies.",
-    skills: [
-      "ReactJS",
-      "Redux",
-      "JavaScript",
-      "Tailwind CSS",
-      "HTML",
-      "CSS",
-      "SQL",
-    ],
-  },
-  {
-    id: 2,
-    img: typeof newtonschoolLogo !== "undefined" ? newtonschoolLogo : null,
-    role: "Frontend Intern",
-    company: "Newton School",
-    date: "September 2021 - August 2022",
-    desc: "Worked as a Frontend Developer Intern, designing and implementing scalable UI components and responsive websites using HTML, CSS, JavaScript, Bootstrap, and Material UI. Collaborated with the design team to translate wireframes and prototypes from Figma into interactive, user-friendly web pages.",
-    skills: ["HTML", "CSS", "Javascript", "Bootstrap", "Figma", "Material UI"],
-  },
+  // {
+  //   id: 0,
+  //   img: typeof webverseLogo !== "undefined" ? webverseLogo : null,
+  //   role: "Fullstack Developer",
+  //   company: "Webverse Digital",
+  //   date: "April 2024 - Present",
+  //   desc: "Developed dynamic and scalable web applications using the MERN stack, handling both frontend and backend development. Collaborated with cross-functional teams to build responsive UI, implement RESTful APIs, and optimize application performance in an agile environment.",
+  //   skills: [
+  //     "HTML",
+  //     "CSS",
+  //     "JavaScript",
+  //     "React JS",
+  //     "TypeScript",
+  //     "Node JS",
+  //     "Tailwind CSS",
+  //     "MongoDb",
+  //     "Redux",
+  //     " Next Js",
+  //   ],
+  // },
 ];
 
 export const education = [
@@ -193,61 +160,34 @@ export const education = [
 export const projects = [
   {
     id: 0,
-    title: "GitHub Profile Detective",
+    title: "IYKYK Prints",
     description:
-      "A powerful and user-friendly React.js application designed to uncover and showcase detailed GitHub profile information. Simply enter a GitHub username, and the app fetches comprehensive data, including profile stats, repositories, followers, and contributions. The intuitive interface ensures a seamless experience, making it a must-visit tool for developers and recruiters.",
-    image: typeof githubdetLogo !== "undefined" ? githubdetLogo : null,
-    tags: ["HTML", "CSS", "JavaScript", "React JS", "API"],
-    github:
-      "https://github.com/codingmastr/GitHub-Profile-Search-App-Using-React-JS",
-    webapp: "https://githubprofiledetective.netlify.app/",
+      "A Shopify-based e-commerce brand focused on custom 3D-printed products. Responsible for website development, branding, product planning, pricing strategy, and marketing initiatives while preparing for the official launch.",
+    image: iykykLogo,
+    tags: ["Shopify", "E-commerce", "3D Printing", "Entrepreneurship"],
+    github: "",
+    webapp: "https://iykykprints.com",
   },
+
   {
     id: 1,
-    title: "CS Prep",
+    title: "Stupify",
     description:
-      "A full-stack quiz-based platform designed for GATE/UGC NET students to practice previous year questions and create customized tests. The platform offers comprehensive profile stats and detailed results, helping students track and improve their preparation journey effectively.",
-    image: typeof csprepLogo !== "undefined" ? csprepLogo : null,
-    tags: [
-      "React JS",
-      "Node.js",
-      "MongoDB",
-      "Express",
-      "HTML",
-      "CSS",
-      "JavaScript",
-    ],
-    github: "https://github.com/codingmastr/CSPrep",
-    webapp: "https://csprep.netlify.app/",
+      "An educational platform that combines productivity and learning tools for students, including note-taking, task management, typing speed analysis, and Pomodoro-based study sessions.",
+    image: stupifyLogo,
+    tags: ["React JS", "Tailwind CSS", "JavaScript", "HTML"],
+    github: "https://github.com/YashasviDagar/Stupify",
+    webapp: "https://stupify-lilac.vercel.app/",
   },
+
   {
     id: 2,
-    title: "Movie Recommendation App",
+    title: "Infinity",
     description:
-      "A React-based web application that provides movie recommendations based on different criteria, such as genres, user preferences, and popular trends. The intuitive design and smooth experience make it a go-to app for movie enthusiasts.",
-    image: typeof movierecLogo !== "undefined" ? movierecLogo : null,
-    tags: ["React JS", "API", "HTML", "CSS", "JavaScript"],
-    github: "https://github.com/codingmastr/Movie-Recommendation-App",
-    webapp: "https://movie-recommendation-app-jet.vercel.app/",
-  },
-  {
-    id: 3,
-    title: "Email Validator NPM Package",
-    description:
-      "An efficient and customizable NPM package for validating email addresses. Built using React.js and Node.js, it provides robust validation features to help developers ensure that email inputs meet required formats and standards.",
-    image: typeof npmLogo !== "undefined" ? npmLogo : null,
-    tags: ["React JS", "Node.js", "NPM", "Validation"],
-    github: "https://github.com/codingmastr/cmtk-email-validator",
-    webapp: "https://www.npmjs.com/package/cmtk-email-validator",
-  },
-  {
-    id: 4,
-    title: "Task Reminder Chrome Extension Tool",
-    description:
-      "A productivity-boosting Chrome extension designed to help users manage and remember their daily tasks. Built using JavaScript, it offers a simple interface with reminders and task notifications to keep users on track.",
-    image: typeof taskremLogo !== "undefined" ? taskremLogo : null,
-    tags: ["JavaScript", "Chrome Extension", "HTML", "CSS"],
-    github: "https://github.com/codingmastr/Task-Reminder-Tool",
-    webapp: "chrome://extensions/?id=kngheeibjnnidhfoomkpnbeghackheci",
+      "A responsive e-commerce web application featuring product listings, category filtering, shopping cart functionality, and a modern user interface optimized for desktop and mobile devices.",
+    image: infinityLogo,
+    tags: ["React JS", "HTML", "CSS", "JavaScript"],
+    github: "https://github.com/YashasviDagar/INFINITY",
+    webapp: "",
   },
 ];
