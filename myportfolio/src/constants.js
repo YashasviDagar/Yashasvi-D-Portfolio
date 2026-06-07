@@ -134,7 +134,7 @@ export const education = [
     school: "VIT Vellore",
     date: "July 2024 - May 2028",
     grade: "8.68 CGPA",
-    desc: "Currently pursuing a Bachelor of Technology in Computer Science and Engineering with a specialization in Information Security at VIT Vellore. My coursework focuses on software development, data structures and algorithms, database management systems, computer networks, operating systems, cybersecurity, and information security. Through academic projects and self-driven learning, I continue to strengthen my problem-solving, programming, and full-stack development skills while exploring entrepreneurship and technology-driven solutions.",
+    desc: "Currently pursuing a B.Tech in Computer Science and Engineering with a specialization in Information Security at VIT Vellore, maintaining a CGPA of 8.68. My interests span software development, entrepreneurship , full-stack web development, and cybersecurity. As a Senior Core Member of SAE-VIT, I have collaborated with my team to organize and manage events during VIT's flagship festivals, Gravitas and Riviera, strengthening my leadership, teamwork, and event coordination skills. Alongside academics, I am building IYKYK Prints, a startup focused on custom 3D-printed products, where I lead product development, branding, and e-commerce initiatives.",
     degree: "B.Tech Computer Science and Engineering (Information Security)",
   },
   {
@@ -152,7 +152,7 @@ export const education = [
     school: "Kendriya Vidyalaya Moradabad",
     date: "2018 - 2022",
     grade: "95%",
-    desc: "Completed secondary education under the CBSE curriculum, building a strong academic foundation across mathematics, science, and computer applications. Developed analytical and problem-solving skills through a rigorous academic environment while actively participating in school activities. My time at Kendriya Vidyalaya helped cultivate the discipline, curiosity, and learning mindset that continue to support my academic and professional growth.",
+    desc: "Completed secondary education under the CBSE curriculum with an overall score of 95%, including a perfect score of 100% in Mathematics. Developed strong analytical, logical reasoning, and problem-solving skills through a rigorous academic environment. Actively participated in English and Hindi speech competitions and received recognition for public speaking achievements, while also contributing by hosting multiple school events, enhancing my public speaking, leadership, and event management abilities from an early stage.",
     degree: "CBSE (Class X)",
   },
 ];
