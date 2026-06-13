@@ -79,8 +79,7 @@ const Contact = () => {
           <div className="w-32 h-1 bg-teal-500 mx-auto mt-4"></div>
 
           <p className="text-gray-400 mt-4 text-lg font-semibold">
-            I’d love to hear from you—reach out for any opportunities or
-            questions!
+            I'm always open to discussing new opportunities, projects, and collaborations. Feel free to reach out. I'd love to connect.
           </p>
         </div>
 
