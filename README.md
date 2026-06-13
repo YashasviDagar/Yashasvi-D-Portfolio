@@ -1,33 +1,33 @@
-Yashasvi Dagar — Portfolio Website
+# Yashasvi Dagar — Portfolio Website
 
 A modern, responsive personal portfolio website built with React and Tailwind CSS, showcasing my background, skills, projects, and education, with a contact form for direct outreach.
 
+🔗 **Live Site:** _add your deployed link here_
 
+## ✨ Features
 
-✨ Features
+- **Animated Hero/About Section** — typing animation (react-type-animation) cycling through roles, with a 3D tilt profile image (react-parallax-tilt)
+- **Skills Showcase** — categorized tech stack (Frontend, Backend, Languages, Tools) with logos, displayed in responsive tilt cards
+- **Projects Section** — interactive project cards that open a detailed modal with description, tags, and links to live demo / GitHub repo
+- **Education Timeline** — alternating left-right timeline layout with school logos, grades, and descriptions
+- **Contact Form** — integrated with EmailJS for direct email submissions, with toast notifications for success/error feedback
+- **Responsive Navbar** — sticky navbar with scroll-based styling, smooth scroll navigation, and mobile hamburger menu
+- **Footer** — quick navigation links and social media icons (GitHub, LinkedIn, Instagram)
+- **Custom Background Effects** — animated blurred blob and grid background for a modern aesthetic
 
-Animated Hero/About Section — typing animation (react-type-animation) cycling through roles, with a 3D tilt profile image (react-parallax-tilt)
-Skills Showcase — categorized tech stack (Frontend, Backend, Languages, Tools) with logos, displayed in responsive tilt cards
-Projects Section — interactive project cards that open a detailed modal with description, tags, and links to live demo / GitHub repo
-Education Timeline — alternating left-right timeline layout with school logos, grades, and descriptions
-Contact Form — integrated with EmailJS for direct email submissions, with toast notifications for success/error feedback
-Responsive Navbar — sticky navbar with scroll-based styling, smooth scroll navigation, and mobile hamburger menu
-Footer — quick navigation links and social media icons (GitHub, LinkedIn, Instagram)
-Custom Background Effects — animated blurred blob and grid background for a modern aesthetic
+## 🛠️ Tech Stack
 
+- React (Vite)
+- Tailwind CSS (v4, with custom theme animations & clip-paths)
+- EmailJS — contact form email delivery
+- react-toastify — toast notifications
+- react-type-animation — typing text effect
+- react-parallax-tilt — 3D tilt hover effects
+- react-icons — icon library
 
-🛠️ Tech Stack
+## 📁 Project Structure
 
-React (Vite)
-Tailwind CSS (v4, with custom theme animations & clip-paths)
-EmailJS — contact form email delivery
-react-toastify — toast notifications
-react-type-animation — typing text effect
-react-parallax-tilt — 3D tilt hover effects
-react-icons — icon library
-
-📁 Project Structure
-
+```
 src/
 ├── assets/
 │   ├── tech_logo/        # Skill icons
@@ -48,45 +48,49 @@ src/
 ├── App.jsx
 ├── App.css
 └── main.jsx
+```
 
-🚀 Getting Started
+## 🚀 Getting Started
 
-->Prerequisites
-Node.js (v16 or later)
-npm
+### Prerequisites
 
+- Node.js (v16 or later)
+- npm
 
-🪛 Installation
+### Installation
 
-bashgit clone <your-repo-url>
-cd myportfolio
+```bash
+git clone https://github.com/YashasviDagar/Yashasvi-D-Portfolio.git
+cd Yashasvi-D-Portfolio
 npm install
+```
 
-🖼️ Environment Setup (EmailJS)
+### Environment Setup (EmailJS)
 
-The Contact form uses EmailJS. Update the service ID, template ID, and public key in src/components/Contact/Contact.jsx:
+The Contact form uses EmailJS. Update the service ID, template ID, and public key in `src/components/Contact/Contact.jsx`:
 
-jsemailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form.current, "YOUR_PUBLIC_KEY")
+```js
+emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form.current, "YOUR_PUBLIC_KEY")
+```
 
+### Run Locally
 
+```bash
+npm run dev
+```
 
+### Build for Production
 
-🏃‍♂️‍➡️ Run Locally
+```bash
+npm run build
+```
 
-bashnpm run dev
+## 📬 Contact
 
-Build for Production
+- GitHub: [YashasviDagar](https://github.com/YashasviDagar)
+- LinkedIn: [yashasvidagar](https://www.linkedin.com/in/yashasvidagar/)
+- Instagram: [@iykykprints](https://www.instagram.com/iykykprints/)
 
-bashnpm run build
+## 📄 License
 
-📬 Contact
-
-
-GitHub: YashasviDagar
-LinkedIn: yashasvidagar
-Instagram: @iykykprints
-
-
-📄 License
-
-This project is open source and available under the MIT License.
+This project is open source and available under the [MIT License](LICENSE).
