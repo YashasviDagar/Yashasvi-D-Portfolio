@@ -29,8 +29,7 @@ const Work = () => {
         <div className="w-32 h-1 bg-teal-500 mx-auto mt-4"></div>
 
         <p className="text-gray-400 mt-4 text-lg font-semibold">
-          A showcase of the projects I have worked on, highlighting my skills
-          and experience in various technologies
+          A collection of projects that showcase my passion for development, problem-solving, and building impactful solutions using modern technologies.
         </p>
       </div>
 
