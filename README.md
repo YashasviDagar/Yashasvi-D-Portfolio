@@ -2,7 +2,7 @@
 
 A modern, responsive personal portfolio website built with React and Tailwind CSS, showcasing my background, skills, projects, and education, with a contact form for direct outreach.
 
-🔗 **Live Site:** _add your deployed link here_
+🔗 **Live Site:** [Yashasvi Dagar](https://yashasvi-d-portfolio.vercel.app/)
 
 ## ✨ Features
 
