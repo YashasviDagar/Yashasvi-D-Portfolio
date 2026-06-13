@@ -65,9 +65,9 @@ const Navbar = () => {
         {/* LOGO */}
         <div>
           <span className="text-[#14B8A6]">&lt;</span>
-          <span className="text-white">Yashasvi</span>
-          <span className="text-[#14B8A6]">/</span>
           <span className="text-white">Dagar</span>
+          <span className="text-[#14B8A6]">/</span>
+          <span className="text-white">Yashasvi</span>
           <span className="text-[#14B8A6]">&gt;</span>
         </div>
 
@@ -158,7 +158,7 @@ const Navbar = () => {
             {/* mobile social icons */}
             <div className="flex space-x-4">
               <a
-                href="https://github.com/codingmastr"
+                href="https://github.com/YashasviDagar"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#94A3B8] hover:text-[#14B8A6]"
@@ -167,7 +167,7 @@ const Navbar = () => {
               </a>
 
               <a
-                href="https://www.linkedin.com/in/tarun-kaushik-553b441a4"
+                href="https://www.linkedin.com/in/yashasvidagar/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#94A3B8] hover:text-[#14B8A6]"
