@@ -16,7 +16,7 @@ const Education = () => {
         <div className="w-32 h-1 bg-teal-500 mx-auto mt-4"></div>
 
         <p className="text-gray-400 mt-4 text-lg font-semibold">
-          My education has been a journey of learning and development. Here are the details of my academic background
+          My academic background reflects my commitment to continuous learning and growth in technology, software development, and problem-solving.
         </p>
       </div>
 
