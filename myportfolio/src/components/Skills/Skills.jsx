@@ -17,8 +17,7 @@ const Skills = () => {
         <div className="w-24 h-1 bg-[#14B8A6] mx-auto mt-2"></div>
 
         <p className="text-gray-400 mt-4 text-lg font-semibold">
-          A collection of my technical skills and expertise honed through
-          various projects and experiences
+          My technical toolkit, built through practical experience, academic learning, and real-world projects.
         </p>
       </div>
 
