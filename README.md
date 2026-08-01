@@ -3,7 +3,7 @@
 Personal portfolio, rebuilt from scratch as a single page. Terminal /
 firmware aesthetic: warm dark surface, a hand-authored pixel-art
 sprite instead of a stock hero image, a custom slicer-reticle cursor,
-and a scroll indicator that reads like a 3D printer's job progress.
+and an ambient starfield that reacts to scroll velocity.
 
 Live: [yashasvi-d-portfolio.vercel.app](https://yashasvi-d-portfolio.vercel.app/)
 
@@ -13,8 +13,8 @@ Live: [yashasvi-d-portfolio.vercel.app](https://yashasvi-d-portfolio.vercel.app/
 - Tailwind CSS v4 (CSS-based theme config, no `tailwind.config.js`)
 - Self-hosted fonts via `@fontsource` — Martian Mono (display), IBM
   Plex Mono (UI/data), Instrument Sans (body)
-- Plain CSS/JS for the interactive pieces (cursor, sprite, scroll
-  progress, contact terminal) — no animation library
+- Plain CSS/JS/canvas for the interactive pieces (cursor, sprite,
+  starfield, contact terminal) — no animation library
 
 ## Structure
 
@@ -23,10 +23,9 @@ src/
 ├── components/
 │   ├── Navbar/         fixed status-bar nav, IntersectionObserver active-link tracking
 │   ├── Cursor/          custom crosshair cursor with live X/Y readout
-│   ├── PrintProgress/   fixed scroll-progress bar ("LAYER n/240 — pct%")
+│   ├── Starfield/       ambient canvas particle field, streaks on scroll velocity
 │   ├── Hero/            headline + pixel-art sprite
 │   ├── Sprite/          the sprite itself — idle/blink loop, cursor-snapped look direction
-│   ├── Now/             one dated line on what's currently in progress
 │   ├── EarlierWork/     Stupify / Infinity project cards
 │   ├── Stack/           shipped/learning stack as a monospace manifest, plus competitive programming
 │   ├── Education/       four lines, no component

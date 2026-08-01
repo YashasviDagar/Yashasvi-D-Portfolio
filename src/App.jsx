@@ -1,6 +1,6 @@
 import Navbar from './components/Navbar/Navbar'
 import Cursor from './components/Cursor/Cursor'
-import PrintHead from './components/PrintHead/PrintHead'
+import Starfield from './components/Starfield/Starfield'
 import Hero from './components/Hero/Hero'
 import Stack from './components/Stack/Stack'
 import EarlierWork from './components/EarlierWork/EarlierWork'
@@ -12,7 +12,7 @@ function App() {
   return (
     <div id="top" className="relative pt-14">
       <Cursor />
-      <PrintHead />
+      <Starfield />
       <Navbar />
       <main>
         <Hero />

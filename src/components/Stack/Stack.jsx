@@ -27,7 +27,7 @@ const LEARNING = [
 const COMPETITIVE = [
   {
     platform: "leetcode",
-    detail: "1687 max · 215+ solved",
+    detail: "1687 max · 300+ solved",
     href: "https://leetcode.com/u/dagaryashasvi/",
   },
   {

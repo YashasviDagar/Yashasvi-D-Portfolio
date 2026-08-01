@@ -44,14 +44,14 @@ const Navbar = () => {
         <a
           href="#top"
           onClick={handleClick("top")}
-          className="flex shrink-0 items-baseline gap-2 opacity-90 transition-opacity hover:opacity-100"
+          className="flex shrink-0 items-center gap-2 opacity-90 transition-opacity hover:opacity-100"
         >
           <img
             src="/sprite/head-icon.png"
             alt=""
             width={24}
             height={24}
-            className="pixelated h-12 w-12"
+            className="pixelated h-6 w-6"
           />
           <span className="font-mono text-sm tracking-tight text-bone">
             yashasvi<span className="hidden sm:inline"> dagar</span>
