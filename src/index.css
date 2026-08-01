@@ -74,6 +74,14 @@ body {
   background: var(--color-filament);
 }
 
+body.cursor-none-custom * {
+  cursor: none;
+}
+body.cursor-none-custom input,
+body.cursor-none-custom textarea {
+  cursor: text;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

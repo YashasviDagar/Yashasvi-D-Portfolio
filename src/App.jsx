@@ -1,4 +1,6 @@
 import Navbar from './components/Navbar/Navbar'
+import Cursor from './components/Cursor/Cursor'
+import PrintProgress from './components/PrintProgress/PrintProgress'
 import About from './components/About/About'
 import Skills from './components/Skills/Skills'
 import Experience from './components/Experience/Experience'
@@ -9,7 +11,8 @@ import Footer from './components/Footer/Footer'
 
 function App() {
   return (
-    <div id="top" className="relative pt-12">
+    <div id="top" className="relative pt-12 pb-8">
+      <Cursor />
       <Navbar />
       <About />
       <Skills />
@@ -18,6 +21,7 @@ function App() {
       <Education />
       <Contact />
       <Footer />
+      <PrintProgress />
     </div>
   )
 }
