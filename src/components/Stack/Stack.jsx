@@ -37,18 +37,13 @@ const COMPETITIVE = [
   },
 ];
 
-const Leader = () => (
-  <span aria-hidden="true" className="mb-0.75 flex-1 border-b border-dotted border-bone/25" />
-);
-
 const ShippedRow = ({ name, used }) => (
   <li
     tabIndex={0}
-    className="group flex items-baseline gap-2 py-1 font-mono text-sm text-bone"
+    className="group flex items-baseline justify-between gap-4 py-1 font-mono text-sm text-bone"
   >
-    <span className="shrink-0">{name}</span>
-    <Leader />
-    <span className="shrink-0 text-right text-slate opacity-0 transition-opacity duration-150 group-hover:opacity-100 group-focus-visible:opacity-100">
+    <span>{name}</span>
+    <span className="text-right text-slate opacity-0 transition-opacity duration-150 group-hover:opacity-100 group-focus-visible:opacity-100">
       {used}
     </span>
   </li>
@@ -57,9 +52,8 @@ const ShippedRow = ({ name, used }) => (
 const CompetitiveRow = ({ platform, detail, href }) => {
   const content = (
     <>
-      <span className="shrink-0">{platform}</span>
-      <Leader />
-      <span className="shrink-0 text-right text-slate">{detail}</span>
+      <span>{platform}</span>
+      <span className="text-right text-slate">{detail}</span>
     </>
   );
   return (
@@ -69,12 +63,12 @@ const CompetitiveRow = ({ platform, detail, href }) => {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-baseline gap-2 py-1 font-mono text-sm text-bone transition-colors hover:text-filament"
+          className="flex items-baseline justify-between gap-4 py-1 font-mono text-sm text-bone transition-colors hover:text-filament"
         >
           {content}
         </a>
       ) : (
-        <div className="flex items-baseline gap-2 py-1 font-mono text-sm text-bone">
+        <div className="flex items-baseline justify-between gap-4 py-1 font-mono text-sm text-bone">
           {content}
         </div>
       )}

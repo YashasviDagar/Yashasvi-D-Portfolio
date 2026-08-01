@@ -14,14 +14,10 @@ const Education = () => {
           {ENTRIES.map((entry) => (
             <li
               key={entry.name}
-              className="flex items-baseline gap-2 py-1 font-mono text-sm text-bone"
+              className="flex items-baseline justify-between gap-4 py-1 font-mono text-sm text-bone"
             >
-              <span className="shrink-0">{entry.name}</span>
-              <span
-                aria-hidden="true"
-                className="mb-0.75 flex-1 border-b border-dotted border-bone/25"
-              />
-              <span className="shrink-0 text-right text-slate">{entry.meta}</span>
+              <span>{entry.name}</span>
+              <span className="text-right text-slate">{entry.meta}</span>
             </li>
           ))}
         </ul>
