@@ -37,19 +37,50 @@ const COMPETITIVE = [
   },
 ];
 
+const Leader = () => (
+  <span aria-hidden="true" className="mb-0.75 flex-1 border-b border-dotted border-bone/25" />
+);
+
 const ShippedRow = ({ name, used }) => (
   <li
     tabIndex={0}
-    className="group grid grid-cols-[9rem_1fr] py-1 font-mono text-sm text-bone"
+    className="group flex items-baseline gap-2 py-1 font-mono text-sm text-bone"
   >
-    <span>{name}</span>
-    {used && (
-      <span className="text-slate opacity-0 transition-opacity duration-150 group-hover:opacity-100 group-focus-visible:opacity-100">
-        {used}
-      </span>
-    )}
+    <span className="shrink-0">{name}</span>
+    <Leader />
+    <span className="shrink-0 text-right text-slate opacity-0 transition-opacity duration-150 group-hover:opacity-100 group-focus-visible:opacity-100">
+      {used}
+    </span>
   </li>
 );
+
+const CompetitiveRow = ({ platform, detail, href }) => {
+  const content = (
+    <>
+      <span className="shrink-0">{platform}</span>
+      <Leader />
+      <span className="shrink-0 text-right text-slate">{detail}</span>
+    </>
+  );
+  return (
+    <li>
+      {href ? (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-baseline gap-2 py-1 font-mono text-sm text-bone transition-colors hover:text-filament"
+        >
+          {content}
+        </a>
+      ) : (
+        <div className="flex items-baseline gap-2 py-1 font-mono text-sm text-bone">
+          {content}
+        </div>
+      )}
+    </li>
+  );
+};
 
 const Stack = () => {
   return (
@@ -84,29 +115,9 @@ const Stack = () => {
         <div className="mt-14">
           <p className="font-mono text-sm text-slate">competitive programming</p>
           <ul className="mt-3">
-            {COMPETITIVE.map((item) =>
-              item.href ? (
-                <li key={item.platform}>
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="grid grid-cols-[9rem_1fr] py-1 font-mono text-sm text-bone transition-colors hover:text-filament"
-                  >
-                    <span>{item.platform}</span>
-                    <span className="text-slate">{item.detail}</span>
-                  </a>
-                </li>
-              ) : (
-                <li
-                  key={item.platform}
-                  className="grid grid-cols-[9rem_1fr] py-1 font-mono text-sm text-bone"
-                >
-                  <span>{item.platform}</span>
-                  <span className="text-slate">{item.detail}</span>
-                </li>
-              )
-            )}
+            {COMPETITIVE.map((item) => (
+              <CompetitiveRow key={item.platform} {...item} />
+            ))}
           </ul>
         </div>
       </div>
