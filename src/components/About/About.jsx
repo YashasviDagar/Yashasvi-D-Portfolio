@@ -1,6 +1,3 @@
-import React from "react";
-import { TypeAnimation } from "react-type-animation";
-import Tilt from "react-parallax-tilt";
 import profileImage from "../../assets/profile2.png";
 
 const About = () => {
@@ -27,22 +24,7 @@ const About = () => {
           {/* TypeAnimation => dynamic typing effect, delay sequence important hota hai */}
           <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-[#14B8A6] leading-tight">
             <span className="text-white">I am a </span>
-            <TypeAnimation
-              sequence={[
-                "Developer",
-                2000,
-                "Problem Solver",
-                2000,
-                "Startup Founder",
-                2000,
-                "Tech Enthusiast",
-                2000,
-              ]}
-              speed={50}
-              deletionSpeed={65}
-              repeat={Infinity}
-              className="text-[#14B8A6]"
-            />
+            <span>Developer</span>
           </h3>
 
           {/* About Me Paragraph */}
@@ -73,26 +55,13 @@ const About = () => {
 
         {/* Right Side - Profile Image Section */}
         <div className="md:w-1/2 flex justify-center md:justify-end">
-          {/* Tilt effect wrapper */}
-          {/* NOTE: react-parallax-tilt gives 3D hover effect -> performance sensitive on low devices */}
-          <Tilt
-            tiltMaxAngleX={15}
-            tiltMaxAngleY={15}
-            perspective={1000}
-            scale={1.03}
-            transitionSpeed={1000}
-            gyroscope={true}
-            className="rounded-full"
-          >
-            {/* Profile Image Container */}
-            <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-112.5 md:h-112.5 rounded-full border-4 border-teal-500 overflow-hidden flex items-center justify-center shadow-[0_0_30px_rgba(20,184,166,0.4)]">
-              <img
-                src={profileImage}
-                alt="Yashasvi Dagar"
-                className="w-full h-full object-cover object-center scale-105"
-              />
-            </div>
-          </Tilt>
+          <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-112.5 md:h-112.5 rounded-full border-4 border-teal-500 overflow-hidden flex items-center justify-center shadow-[0_0_30px_rgba(20,184,166,0.4)] transition-transform duration-500 hover:scale-105">
+            <img
+              src={profileImage}
+              alt="Yashasvi Dagar"
+              className="w-full h-full object-cover object-center scale-105"
+            />
+          </div>
         </div>
       </div>
     </section>

@@ -1,6 +1,4 @@
-import React from "react";
 import { SkillsInfo } from "../../constants";
-import Tilt from "react-parallax-tilt";
 
 const Skills = () => {
   return (
@@ -37,57 +35,36 @@ const Skills = () => {
               {category.title}
             </h3>
 
-            {/* Tilt wrapper */}
-            {/* IMPORTANT: tilt whole grid not individual items -> better performance */}
-            <Tilt
-              key={category.title}
-              tiltMaxAngleX={20}
-              tiltMaxAngleY={20}
-              perspective={1000}
-              scale={1.05}
-              transitionSpeed={1000}
-              gyroscope={true}
+            {/* SKILL GRID */}
+            {/* auto-fill -> responsive grid without manual breakpoints */}
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))",
+                gap: "0.75rem",
+                width: "100%",
+              }}
             >
-              {/* SKILL GRID */}
-              {/* auto-fill -> responsive grid without manual breakpoints */}
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))",
-                  gap: "0.75rem",
-                  width: "100%",
-                }}
-              >
-                {category.skills.map((skill) => (
-                  <div
-                    key={skill.name}
-                    className="flex items-center justify-start gap-2 bg-transparent border-2 border-gray-700 rounded-3xl py-2 px-3"
-                    style={{ minWidth: 0, overflow: "hidden" }}
-                  >
-                    {/* skill icon */}
-                    <img
-                      src={skill.logo}
-                      alt={`${skill.name} logo`}
-                      className="w-6 h-6 sm:w-7 sm:h-7 shrink-0"
-                    />
+              {category.skills.map((skill) => (
+                <div
+                  key={skill.name}
+                  className="flex items-center justify-start gap-2 bg-transparent border-2 border-gray-700 rounded-3xl py-2 px-3"
+                  style={{ minWidth: 0, overflow: "hidden" }}
+                >
+                  {/* skill icon */}
+                  <img
+                    src={skill.logo}
+                    alt={`${skill.name} logo`}
+                    className="w-6 h-6 sm:w-7 sm:h-7 shrink-0"
+                  />
 
-                    {/* skill name */}
-                    {/* NOTE: text overflow handling important for long skill names */}
-                    <span
-                      className="text-xs sm:text-sm text-gray-300 leading-tight"
-                      style={{
-                        overflow: "hidden",
-                        textOverflow: "ellipsis",
-                        whiteSpace: "nowrap",
-                        minWidth: 0,
-                      }}
-                    >
-                      {skill.name}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </Tilt>
+                  {/* skill name */}
+                  <span className="text-xs sm:text-sm text-gray-300 leading-tight">
+                    {skill.name}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         ))}
       </div>

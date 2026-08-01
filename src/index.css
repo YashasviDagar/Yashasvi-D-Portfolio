@@ -1,11 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "@fontsource-variable/martian-mono/wght.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+@import "@fontsource-variable/instrument-sans/wght.css";
 @import "tailwindcss";
 
-
 @theme {
-  --animate-blob: blob 10s infinite;
+  /* palette */
+  --color-ink-950: #1a1410;
+  --color-ink-900: #221b15;
+  --color-bone: #ede6db;
+  --color-filament: #ff5a18;
+  --color-slate: #6b615a;
+  --color-paper: #efe7d8;
+  --color-paper-ink: #2a211a;
+  --color-paper-line: #c9bca8;
 
-  /* for skills */
+  /* type */
+  --font-display: "Martian Mono Variable", ui-monospace, "SFMono-Regular", monospace;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+  --font-sans: "Instrument Sans Variable", ui-sans-serif, system-ui, sans-serif;
+
+  /* for skills — legacy, remove once Skills.jsx is rebuilt */
+  --animate-blob: blob 10s infinite;
   --background-image-skills-gradient: linear-gradient(38.73deg, rgba(204, 0, 187, 0.15) 0%, rgba(201, 32, 184, 0) 50%), linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, rgba(0, 70, 209, 0.15) 100%);
 
   @keyframes blob {
@@ -16,20 +32,60 @@
   }
 }
 
-*{
-  font-family: 'Poppins', sans-serif;
-}
-
-html{
+html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
 body {
   overflow-x: hidden;
+  background-color: var(--color-ink-950);
+  color: var(--color-bone);
+  font-family: var(--font-sans);
 }
 
-/* For the upr niche wala effect from changing to skills to experience */
+::selection {
+  background-color: var(--color-filament);
+  color: var(--color-ink-950);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-filament);
+  outline-offset: 2px;
+}
+
+* {
+  scrollbar-color: var(--color-slate) var(--color-ink-900);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ink-900);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-slate);
+  border: 2px solid var(--color-ink-900);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-filament);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* For the upr niche wala effect from changing to skills to experience — legacy, remove once Work.jsx is rebuilt */
 @utility clip-path-custom {
   clip-path: polygon(0 0, 100% 0, 100% 98%, 75% 95%, 0 100%);
 }
