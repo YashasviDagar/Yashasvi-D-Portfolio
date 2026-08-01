@@ -4,8 +4,7 @@ import PrintProgress from './components/PrintProgress/PrintProgress'
 import Hero from './components/Hero/Hero'
 import Now from './components/Now/Now'
 import Stack from './components/Stack/Stack'
-import Experience from './components/Experience/Experience'
-import Work from './components/Work/Work'
+import EarlierWork from './components/EarlierWork/EarlierWork'
 import Education from './components/Education/Education'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
@@ -17,9 +16,8 @@ function App() {
       <Navbar />
       <Hero />
       <Now />
+      <EarlierWork />
       <Stack />
-      <Experience />
-      <Work />
       <Education />
       <Contact />
       <Footer />

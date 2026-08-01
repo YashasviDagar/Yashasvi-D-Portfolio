@@ -7,7 +7,6 @@ import vitLogo from "./assets/education_logo/vit.png";
 import chandramLogo from "./assets/education_logo/chandram.png";
 
 // Project Section Logo's
-import iykyk from "./assets/work_logo/iykyk.png";
 import stupify from "./assets/work_logo/stupify.png";
 import infinity from "./assets/work_logo/infinity.png";
 
@@ -65,36 +64,25 @@ export const education = [
   },
 ];
 
-export const projects = [
+export const earlierWork = [
   {
     id: 0,
-    title: "iykyk Prints",
-    description:
-      "A Shopify-based e-commerce brand focused on custom 3D-printed products. Responsible for website development, branding, product planning, pricing strategy, and marketing initiatives while preparing for the official launch.",
-    image: iykyk,
-    tags: ["Entrepreneurship", "Shopify", "E-commerce", "3D Printing"],
-    github: "",
-    webapp: "https://iykykprints.com",
-  },
-
-  {
-    id: 1,
     title: "Stupify",
     description:
-      "An educational platform that combines productivity and learning tools for students, including note-taking, task management, typing speed analysis, and Pomodoro-based study sessions.",
+      "Notes, tasks, a Pomodoro timer, and a typing test — one study dashboard.",
     image: stupify,
-    tags: ["React JS", "Tailwind CSS", "JavaScript", "HTML"],
+    tags: ["React", "Tailwind CSS", "JavaScript", "HTML"],
     github: "https://github.com/YashasviDagar/Stupify",
     webapp: "https://stupify-lilac.vercel.app/",
   },
 
   {
-    id: 2,
+    id: 1,
     title: "Infinity",
     description:
-      "A responsive e-commerce web application featuring product listings, category filtering, shopping cart functionality, and a modern user interface optimized for desktop and mobile devices.",
+      "Product listings, category filters, and a cart. Frontend only, no backend.",
     image: infinity,
-    tags: ["React JS", "HTML", "CSS", "JavaScript"],
+    tags: ["React", "HTML", "CSS", "JavaScript"],
     github: "https://github.com/YashasviDagar/INFINITY",
     webapp: "",
   },

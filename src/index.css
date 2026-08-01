@@ -95,7 +95,7 @@ body.cursor-none-custom textarea {
   image-rendering: crisp-edges;
 }
 
-/* For the upr niche wala effect from changing to skills to experience — legacy, remove once Work.jsx is rebuilt */
+/* Diagonal wedge dividers — legacy, remove once Education.jsx is rebuilt (it's the only remaining consumer) */
 @utility clip-path-custom {
   clip-path: polygon(0 0, 100% 0, 100% 98%, 75% 95%, 0 100%);
 }
