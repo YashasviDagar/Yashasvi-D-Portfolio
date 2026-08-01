@@ -1,96 +1,74 @@
-# Yashasvi Dagar — Portfolio Website
+# Yashasvi Dagar — Portfolio
 
-A modern, responsive personal portfolio website built with React and Tailwind CSS, showcasing my background, skills, projects, and education, with a contact form for direct outreach.
+Personal portfolio, rebuilt from scratch as a single page. Terminal /
+firmware aesthetic: warm dark surface, a hand-authored pixel-art
+sprite instead of a stock hero image, a custom slicer-reticle cursor,
+and a scroll indicator that reads like a 3D printer's job progress.
 
-🔗 **Live Site:** [Yashasvi Dagar](https://yashasvi-d-portfolio.vercel.app/)
+Live: [yashasvi-d-portfolio.vercel.app](https://yashasvi-d-portfolio.vercel.app/)
 
-## ✨ Features
+## Stack
 
-- **Animated Hero/About Section** — typing animation (react-type-animation) cycling through roles, with a 3D tilt profile image (react-parallax-tilt)
-- **Skills Showcase** — categorized tech stack (Frontend, Backend, Languages, Tools) with logos, displayed in responsive tilt cards
-- **Projects Section** — interactive project cards that open a detailed modal with description, tags, and links to live demo / GitHub repo
-- **Education Timeline** — alternating left-right timeline layout with school logos, grades, and descriptions
-- **Contact Form** — integrated with EmailJS for direct email submissions, with toast notifications for success/error feedback
-- **Responsive Navbar** — sticky navbar with scroll-based styling, smooth scroll navigation, and mobile hamburger menu
-- **Footer** — quick navigation links and social media icons (GitHub, LinkedIn, Instagram)
-- **Custom Background Effects** — animated blurred blob and grid background for a modern aesthetic
+- React 19 + Vite
+- Tailwind CSS v4 (CSS-based theme config, no `tailwind.config.js`)
+- Self-hosted fonts via `@fontsource` — Martian Mono (display), IBM
+  Plex Mono (UI/data), Instrument Sans (body)
+- Plain CSS/JS for the interactive pieces (cursor, sprite, scroll
+  progress, contact terminal) — no animation library
 
-## 🛠️ Tech Stack
-
-- React (Vite)
-- Tailwind CSS (v4, with custom theme animations & clip-paths)
-- EmailJS — contact form email delivery
-- react-toastify — toast notifications
-- react-type-animation — typing text effect
-- react-parallax-tilt — 3D tilt hover effects
-- react-icons — icon library
-
-## 📁 Project Structure
+## Structure
 
 ```
 src/
-├── assets/
-│   ├── tech_logo/        # Skill icons
-│   ├── education_logo/   # School logos
-│   ├── work_logo/        # Project images
-│   └── profile2.png       # Profile picture
 ├── components/
-│   ├── About/About.jsx
-│   ├── Skills/Skills.jsx
-│   ├── Experience/Experience.jsx
-│   ├── Work/Work.jsx
-│   ├── Education/Education.jsx
-│   ├── Contact/Contact.jsx
-│   ├── Footer/Footer.jsx
-│   ├── Navbar/Navbar.jsx
-│   └── BlurBlob.jsx
-├── constants/             # Skills, education, and project data
-├── App.jsx
-├── App.css
-└── main.jsx
+│   ├── Navbar/         fixed status-bar nav, IntersectionObserver active-link tracking
+│   ├── Cursor/          custom crosshair cursor with live X/Y readout
+│   ├── PrintProgress/   fixed scroll-progress bar ("LAYER n/240 — pct%")
+│   ├── Hero/            headline + pixel-art sprite
+│   ├── Sprite/          the sprite itself — idle/blink loop, cursor-snapped look direction
+│   ├── Now/             one dated line on what's currently in progress
+│   ├── EarlierWork/     Stupify / Infinity project cards
+│   ├── Stack/           shipped/learning stack as a monospace manifest, plus competitive programming
+│   ├── Education/       four lines, no component
+│   ├── Contact/         click-to-copy email + a small hand-written terminal
+│   └── Footer/
+├── utils/scroll.js      reduced-motion-aware smooth-scroll helper
+├── constants.js         earlier-work project data
+└── index.css            palette/type tokens, global base styles
 ```
 
-## 🚀 Getting Started
+`public/sprite/` holds the sprite's frame PNGs (`idle-0`, `idle-1`,
+`look-left`, `look-right`, `look-up`, `look-down`) — 64×64, scaled only
+at integer multiples with `image-rendering: pixelated`.
 
-### Prerequisites
-
-- Node.js (v16 or later)
-- npm
-
-### Installation
+## Running locally
 
 ```bash
-git clone https://github.com/YashasviDagar/Yashasvi-D-Portfolio.git
-cd Yashasvi-D-Portfolio
 npm install
-```
-
-### Environment Setup (EmailJS)
-
-The Contact form uses EmailJS. Update the service ID, template ID, and public key in `src/components/Contact/Contact.jsx`:
-
-```js
-emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form.current, "YOUR_PUBLIC_KEY")
-```
-
-### Run Locally
-
-```bash
 npm run dev
 ```
 
-### Build for Production
-
 ```bash
-npm run build
+npm run build      # production build to dist/
+npm run preview     # serve that build locally
+npm run lint
 ```
 
-## 📬 Contact
+No environment variables or third-party services are required — the
+contact section is a plain email address plus a hand-written command
+parser, not a form.
 
-- GitHub: [YashasviDagar](https://github.com/YashasviDagar)
-- LinkedIn: [yashasvidagar](https://www.linkedin.com/in/yashasvidagar/)
-- Instagram: [@iykykprints](https://www.instagram.com/iykykprints/)
+## Accessibility / performance notes
 
-## 📄 License
+- Custom cursor and sprite animation are disabled under
+  `prefers-reduced-motion` and on touch/coarse-pointer devices
+  (verified with emulated contexts, not just the media query logic).
+- Palette contrast was computed against WCAG AA (4.5:1), not eyeballed.
+- LCP measured under a simulated mid-range-Android + Slow-4G profile
+  lands around 1.3s.
 
-This project is open source and available under the [MIT License](LICENSE).
+## Status
+
+Hero through Contact are built. The iykyk Prints case study and the
+doodlydoo section are still pending real content and aren't in this
+branch yet.
