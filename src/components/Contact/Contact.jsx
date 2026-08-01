@@ -1,150 +1,141 @@
-import React, { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { useEffect, useRef, useState } from "react";
 
-const Contact = () => {
-  const form = useRef();
+const EMAIL = "samsepiol7594@gmail.com";
+const GITHUB_URL = "https://github.com/YashasviDagar";
+const RESUME_URL =
+  "https://drive.google.com/file/d/1ReRmyQoDxz6imVL8DRog1biIrZpn2tke/view?usp=sharing";
 
-  const [isSent, setIsSent] = useState(false);
+const HELP_TEXT = "commands: email, resume, github, whoami, clear, help";
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+// Small hand-written parser — no-arg commands only, on purpose.
+function runCommand(command) {
+  switch (command) {
+    case "email":
+      return EMAIL;
+    case "resume":
+      return RESUME_URL;
+    case "github":
+      return GITHUB_URL;
+    case "whoami":
+      return "yashasvi dagar — cse student at vit vellore. builds software, prints parts.";
+    case "help":
+      return HELP_TEXT;
+    case "clear":
+      return "__clear__";
+    default:
+      return `command not found: ${command}. try 'help'.`;
+  }
+}
 
-    // EmailJS handles form submission and sends data to your configured email service
-    emailjs
-      .sendForm(
-        "service_pqikhuf", // Section Id of EmailJS
-        "template_8g47o7y", // Template Id of EmailJs
-        form.current,
-        "gSrmIk9tNrIOLjFli",
-      )
-      .then(
-        () => {
-          setIsSent(true);
+const Terminal = () => {
+  const [history, setHistory] = useState([
+    { command: null, output: "type 'help' to see what this does." },
+  ]);
+  const [value, setValue] = useState("");
+  const inputRef = useRef(null);
+  const historyRef = useRef(null);
 
-          // Reset form after successful submission
-          form.current.reset();
+  useEffect(() => {
+    if (historyRef.current) {
+      historyRef.current.scrollTop = historyRef.current.scrollHeight;
+    }
+  }, [history]);
 
-          // Success toast notification (user feedback)
-          toast.success("Message sent successfully! ✅", {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            theme: "dark",
-          });
-        },
-        (error) => {
-          // If email fails, log error for debugging
-          console.error("Error sending message:", error);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const command = value.trim().toLowerCase();
+    if (!command) return;
 
-          // Error toast notification for user
-          toast.error("Failed to send message. Please try again.", {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            theme: "dark",
-          });
-        },
-      );
+    const output = runCommand(command);
+    if (output === "__clear__") {
+      setHistory([]);
+    } else {
+      setHistory((prev) => [...prev, { command, output }]);
+    }
+    setValue("");
+  };
+
+  const focusInput = () => {
+    if (window.getSelection()?.toString()) return;
+    inputRef.current?.focus();
   };
 
   return (
-    <>
-      {/* Fix for browser autofill styling (dark theme compatibility) */}
-      <style>{`
-        input:-webkit-autofill {
-          -webkit-box-shadow: 0 0 0 1000px #131025 inset;
-          -webkit-text-fill-color: white;
-        }
-      `}</style>
-
-      <section
-        id="contact"
-        className="flex flex-col items-center justify-center py-24 px-[12vw] md:px-[7vw] lg:px-[20vw]"
+    <div
+      onClick={focusInput}
+      className="border border-bone/15 bg-ink-900 p-4 font-mono text-sm"
+    >
+      <div
+        ref={historyRef}
+        aria-live="polite"
+        className="max-h-56 space-y-2 overflow-y-auto"
       >
-        {/* Toast notifications container (required for react-toastify to show alerts) */}
-        <ToastContainer />
+        {history.map((entry, index) => (
+          <div key={index}>
+            {entry.command !== null && (
+              <p className="text-bone">
+                <span className="text-filament">visitor@yashasvi:~$</span>{" "}
+                {entry.command}
+              </p>
+            )}
+            {entry.output && (
+              <p className="whitespace-pre-wrap text-slate">{entry.output}</p>
+            )}
+          </div>
+        ))}
+      </div>
+      <form onSubmit={handleSubmit} className="mt-2 flex items-center gap-2">
+        <span className="text-filament">visitor@yashasvi:~$</span>
+        <input
+          ref={inputRef}
+          value={value}
+          onChange={(event) => setValue(event.target.value)}
+          autoComplete="off"
+          spellCheck={false}
+          aria-label="Terminal command input"
+          className="flex-1 bg-transparent text-bone outline-none"
+        />
+      </form>
+    </div>
+  );
+};
 
-        {/* SECTION TITLE */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white">CONTACT</h2>
+const Contact = () => {
+  const [copied, setCopied] = useState(false);
 
-          <div className="w-32 h-1 bg-teal-500 mx-auto mt-4"></div>
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      /* clipboard API unavailable — nothing to fall back to */
+    }
+  };
 
-          <p className="text-gray-400 mt-4 text-lg font-semibold">
-            I'm always open to discussing new opportunities, projects, and collaborations. Feel free to reach out. I'd love to connect.
-          </p>
+  return (
+    <section id="contact" className="border-t border-bone/10 px-4 py-20 sm:px-8">
+      <div className="mx-auto max-w-2xl">
+        <h2 className="font-mono text-2xl font-medium tracking-tight text-bone sm:text-3xl">
+          contact
+        </h2>
+
+        <button
+          type="button"
+          onClick={handleCopy}
+          className="mt-6 block font-mono text-lg text-bone transition-colors hover:text-filament"
+        >
+          {EMAIL}{" "}
+          <span aria-live="polite" className="text-sm text-slate">
+            {copied ? "copied" : "[copy]"}
+          </span>
+        </button>
+
+        <div className="mt-8">
+          <Terminal />
         </div>
-
-        {/* CONTACT FORM CONTAINER */}
-        {/* Center card with dark theme + border glow effect */}
-        <div className="mt-8 w-full max-w-md bg-[#0d081f] p-6 rounded-lg border border-teal-900 shadow-[0_0_25px_rgba(20,184,166,0.15)]">
-          
-          <h3 className="text-xl font-semibold text-white text-center mb-2">
-            Connect With Me
-          </h3>
-
-          {/* Form submission handled via EmailJS */}
-          <form
-            ref={form}
-            onSubmit={sendEmail}
-            className="mt-4 flex flex-col space-y-4"
-          >
-            {/* Email input */}
-            <input
-              type="email"
-              name="user_email"
-              placeholder="Your Email"
-              required
-              className="w-full p-3 rounded-md bg-[#131025] text-white border border-gray-600 focus:outline-none focus:border-teal-500"
-            />
-
-            {/* Name input */}
-            <input
-              type="text"
-              name="user_name"
-              placeholder="Your Name"
-              required
-              className="w-full p-3 rounded-md bg-[#131025] text-white border border-gray-600 focus:outline-none focus:border-teal-500"
-            />
-
-            {/* Subject input */}
-            <input
-              type="text"
-              name="subject"
-              placeholder="Subject"
-              required
-              className="w-full p-3 rounded-md bg-[#131025] text-white border border-gray-600 focus:outline-none focus:border-teal-500"
-            />
-
-            {/* Message textarea */}
-            <textarea
-              name="message"
-              placeholder="Message"
-              rows="4"
-              required
-              className="w-full p-3 rounded-md bg-[#131025] text-white border border-gray-600 focus:outline-none focus:border-teal-500"
-            ></textarea>
-
-            {/* Submit button */}
-            {/* Triggers sendEmail function */}
-            <button
-              type="submit"
-              className="w-full bg-transparent border border-teal-300 py-3 text-teal-400 font-semibold rounded-md hover:bg-teal-400 hover:text-slate-950 transition duration-300"
-            >
-              Send
-            </button>
-          </form>
-        </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

@@ -1,73 +1,66 @@
-import React from "react";
-import { FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+
+const navLinks = [
+  { id: "now", label: "now" },
+  { id: "work", label: "work" },
+  { id: "stack", label: "stack" },
+  { id: "contact", label: "contact" },
+];
+
+const socialLinks = [
+  { icon: FaGithub, label: "GitHub", href: "https://github.com/YashasviDagar" },
+  {
+    icon: FaLinkedin,
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/yashasvidagar/",
+  },
+  {
+    icon: FaInstagram,
+    label: "iykykprints on Instagram",
+    href: "https://www.instagram.com/iykykprints/",
+  },
+];
+
+const handleScroll = (id) => (event) => {
+  event.preventDefault();
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+};
 
 const Footer = () => {
-  // Smooth scroll function
-  // Handles navigation button clicks and scrolls to section smoothly
-  const handleScroll = (sectionId) => {
-    const section = document.getElementById(sectionId);
-
-    // Get section from DOM using its id (about, skills, etc.)
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      // Smooth scrolling improves UX instead of instant jump
-    }
-  };
-
   return (
-    <footer className="text-white py-8 px-[12vw] md:px-[7vw] lg:px-[20vw]">
-      <div className="container mx-auto text-center">
-
-        {/* Branding / Name */}
-        <h2 className="text-xl font-semibold text-teal-500">
-          Yashasvi Dagar
-        </h2>
-
-        {/* Navigation Links */}
-        {/* Buttons used for in-page navigation using scrollIntoView */}
-        <nav className="flex flex-wrap justify-center space-x-4 sm:space-x-6 mt-4">
-          {[
-            { name: "About", id: "about" },
-            { name: "Skills", id: "skills" },
-            // { name: "Experience", id: "experience" },
-            { name: "Projects", id: "work" },
-            { name: "Education", id: "education" },
-          ].map((item, index) => (
-            <button
-              key={index}
-              onClick={() => handleScroll(item.id)}
-              className="hover:text-teal-500 text-sm sm:text-base my-1"
+    <footer className="border-t border-bone/10 px-4 py-10 sm:px-8">
+      <div className="mx-auto flex max-w-4xl flex-col items-center gap-6 text-center">
+        <nav aria-label="Footer" className="flex flex-wrap justify-center gap-6">
+          {navLinks.map((link) => (
+            <a
+              key={link.id}
+              href={`#${link.id}`}
+              onClick={handleScroll(link.id)}
+              className="font-mono text-sm text-slate transition-colors hover:text-filament"
             >
-              {item.name}
-            </button>
+              {link.label}
+            </a>
           ))}
         </nav>
 
-        {/* Social Links */}
-        {/* External links open in new tab with security attributes */}
-        <div className="flex flex-wrap justify-center space-x-4 mt-6">
-          {[
-            { icon: <FaGithub />, link: "https://github.com/YashasviDagar" },
-            { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/yashasvidagar/" },
-            { icon: <FaInstagram />, link: "https://www.instagram.com/iykykprints/" },
-          ].map((item, index) => (
+        <div className="flex gap-5">
+          {socialLinks.map(({ icon: Icon, label, href }) => (
             <a
-              key={index}
-              href={item.link}
+              key={href}
+              href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xl hover:text-teal-500 transition-transform transform hover:scale-110"
+              aria-label={label}
+              className="text-lg text-slate transition-colors hover:text-filament"
             >
-              {item.icon}
+              <Icon />
             </a>
           ))}
         </div>
 
-        {/* Copyright */}
-        <p className="text-sm text-gray-400 mt-6">
-          © 2025 Yashasvi Dagar. All rights reserved.
+        <p className="font-mono text-xs text-slate">
+          © {new Date().getFullYear()} Yashasvi Dagar
         </p>
-
       </div>
     </footer>
   );
