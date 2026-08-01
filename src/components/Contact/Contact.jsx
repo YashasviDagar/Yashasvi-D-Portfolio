@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const EMAIL = "samsepiol7594@gmail.com";
+const EMAIL = "yashasvi2046@gmail.com";
 const GITHUB_URL = "https://github.com/YashasviDagar";
 const RESUME_URL =
   "https://drive.google.com/file/d/1ReRmyQoDxz6imVL8DRog1biIrZpn2tke/view?usp=sharing";
