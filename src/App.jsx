@@ -2,6 +2,7 @@ import Navbar from './components/Navbar/Navbar'
 import Cursor from './components/Cursor/Cursor'
 import PrintProgress from './components/PrintProgress/PrintProgress'
 import Hero from './components/Hero/Hero'
+import Now from './components/Now/Now'
 import Skills from './components/Skills/Skills'
 import Experience from './components/Experience/Experience'
 import Work from './components/Work/Work'
@@ -15,6 +16,7 @@ function App() {
       <Cursor />
       <Navbar />
       <Hero />
+      <Now />
       <Skills />
       <Experience />
       <Work />
