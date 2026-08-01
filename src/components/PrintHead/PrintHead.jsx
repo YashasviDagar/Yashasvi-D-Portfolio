@@ -27,9 +27,12 @@ const PrintHead = () => {
     )}%`;
   };
 
-  const homePosition = (progress) => ({
-    x: window.innerWidth * 0.82,
-    y: window.innerHeight * (0.72 - 0.44 * progress),
+  // Ambient wander is centered on the viewport and spans most of it in
+  // both axes — scroll depth only nudges the vertical center slightly
+  // (12% of viewport height across the whole page), it doesn't drive it.
+  const homeCenter = () => ({
+    x: window.innerWidth * 0.5,
+    y: window.innerHeight * 0.5,
   });
 
   // Reduced motion (and not touch): one static position, computed once.
@@ -39,9 +42,10 @@ const PrintHead = () => {
     const doc = document.documentElement;
     const scrollable = doc.scrollHeight - doc.clientHeight;
     const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
-    const { x, y } = homePosition(progress);
+    const { x, y } = homeCenter();
+    const bias = -window.innerHeight * 0.12 * progress;
     if (wrapRef.current) {
-      wrapRef.current.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+      wrapRef.current.style.transform = `translate3d(${x}px, ${y + bias}px, 0)`;
     }
     paintLabel(progress);
   }, [isTouch, reducedMotion]);
@@ -71,15 +75,27 @@ const PrintHead = () => {
       scrollState.current.kick *= 0.94;
       const { progress, kick } = scrollState.current;
 
-      // two sine/cosine pairs at incommensurate, slow frequencies —
-      // never repeats on an obvious loop, never linear, never bounces
-      // off an edge like a screensaver.
-      const driftX = Math.sin(time * 0.11) * 46 + Math.sin(time * 0.041 + 1.3) * 22;
-      const driftY = Math.cos(time * 0.083) * 34 + Math.sin(time * 0.027 + 0.6) * 18;
+      // Two sine/cosine pairs per axis at incommensurate, slow
+      // frequencies — never repeats on an obvious loop, never linear,
+      // never bounces off an edge like a screensaver (there's no
+      // velocity/reflection state to bounce). Amplitudes span most of
+      // the viewport in both axes so it wanders freely with no
+      // dominant direction, rather than sitting anchored near one spot.
+      const { x: centerX, y: centerY } = homeCenter();
+      const ampX = window.innerWidth * 0.38;
+      const ampY = window.innerHeight * 0.32;
 
-      const { x: homeX, y: homeY } = homePosition(progress);
-      const x = homeX + driftX;
-      const y = homeY + driftY + kick;
+      const driftX =
+        Math.sin(time * 0.045) * 0.55 * ampX + Math.sin(time * 0.017 + 2.1) * 0.45 * ampX;
+      const driftY =
+        Math.cos(time * 0.031) * 0.55 * ampY + Math.sin(time * 0.013 + 0.7) * 0.45 * ampY;
+
+      // scroll depth is a gentle long-term bias (rises as the print
+      // progresses), not a driver — kept small relative to ampY on purpose
+      const scrollBias = -window.innerHeight * 0.12 * progress;
+
+      const x = centerX + driftX;
+      const y = centerY + driftY + scrollBias + kick;
 
       if (wrapRef.current) {
         wrapRef.current.style.transform = `translate3d(${x}px, ${y}px, 0)`;
