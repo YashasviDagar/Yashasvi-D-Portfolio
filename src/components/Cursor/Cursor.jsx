@@ -11,16 +11,16 @@ const Cursor = () => {
   const readoutRef = useRef(null);
   const target = useRef({ x: 0, y: 0 });
   const frame = useRef(null);
-  const [enabled, setEnabled] = useState(false);
-  const [hovering, setHovering] = useState(false);
-
-  useEffect(() => {
+  // Lazy initializer runs once on mount, synchronously — no extra render
+  // and no window access during a (nonexistent, this app has no SSR) server pass.
+  const [enabled] = useState(() => {
     const coarsePointer = window.matchMedia("(pointer: coarse)").matches;
     const reducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
-    setEnabled(!coarsePointer && !reducedMotion);
-  }, []);
+    return !coarsePointer && !reducedMotion;
+  });
+  const [hovering, setHovering] = useState(false);
 
   useEffect(() => {
     if (!enabled) return undefined;

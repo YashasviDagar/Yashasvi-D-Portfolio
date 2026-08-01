@@ -20,6 +20,13 @@
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
   --font-sans: "Instrument Sans Variable", ui-sans-serif, system-ui, sans-serif;
 
+  --animate-sprite-bob: sprite-bob 2.4s ease-in-out infinite;
+
+  @keyframes sprite-bob {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-4px); }
+  }
+
   /* for skills — legacy, remove once Skills.jsx is rebuilt */
   --animate-blob: blob 10s infinite;
   --background-image-skills-gradient: linear-gradient(38.73deg, rgba(204, 0, 187, 0.15) 0%, rgba(201, 32, 184, 0) 50%), linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, rgba(0, 70, 209, 0.15) 100%);
@@ -91,6 +98,12 @@ body.cursor-none-custom textarea {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+@utility pixelated {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
 }
 
 /* For the upr niche wala effect from changing to skills to experience — legacy, remove once Work.jsx is rebuilt */

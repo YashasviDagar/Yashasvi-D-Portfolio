@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar/Navbar'
 import Cursor from './components/Cursor/Cursor'
 import PrintProgress from './components/PrintProgress/PrintProgress'
-import About from './components/About/About'
+import Hero from './components/Hero/Hero'
 import Skills from './components/Skills/Skills'
 import Experience from './components/Experience/Experience'
 import Work from './components/Work/Work'
@@ -14,7 +14,7 @@ function App() {
     <div id="top" className="relative pt-12 pb-8">
       <Cursor />
       <Navbar />
-      <About />
+      <Hero />
       <Skills />
       <Experience />
       <Work />
