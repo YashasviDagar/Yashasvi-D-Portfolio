@@ -19,8 +19,8 @@ const Hero = () => {
           i build things, then i print the parts.
         </h1>
         <p className="mt-6 text-lg leading-relaxed text-slate">
-          3rd-year CSE student at VIT Vellore. Running iykykprints on the
-          side, building monkeprints and doodlydoo right now.
+          3rd-year CSE at VIT Vellore. Running iykykprints on the side,
+          building doodlydoo right now.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-6 lg:justify-start">
           <a
