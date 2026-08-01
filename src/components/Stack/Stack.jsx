@@ -10,8 +10,6 @@ const SHIPPED = [
   { name: "c++", used: "competitive programming" },
   { name: "java", used: "competitive programming" },
   { name: "python", used: "competitive programming" },
-  { name: "next.js", used: null },
-  { name: "mongodb", used: null },
 ];
 
 const LEARNING = [
@@ -22,11 +20,21 @@ const LEARNING = [
   "jwt",
   "bcrypt",
   "typescript",
+  "next.js",
+  "mongodb",
 ];
 
 const COMPETITIVE = [
-  { platform: "leetcode", detail: "1687 max · 215+ solved", href: null },
-  { platform: "codeforces", detail: "pupil · 1207 max", href: null },
+  {
+    platform: "leetcode",
+    detail: "1687 max · 215+ solved",
+    href: "https://leetcode.com/u/dagaryashasvi/",
+  },
+  {
+    platform: "codeforces",
+    detail: "pupil · 1207 max",
+    href: "https://codeforces.com/profile/btech1006320",
+  },
 ];
 
 const ShippedRow = ({ name, used }) => (
