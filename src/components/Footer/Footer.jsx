@@ -2,7 +2,6 @@ import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { scrollToId } from "../../utils/scroll";
 
 const navLinks = [
-  { id: "now", label: "now" },
   { id: "work", label: "work" },
   { id: "stack", label: "stack" },
   { id: "contact", label: "contact" },
@@ -31,6 +30,10 @@ const Footer = () => {
   return (
     <footer className="border-t border-bone/10 px-4 py-10 sm:px-8">
       <div className="mx-auto flex max-w-4xl flex-col items-center gap-6 text-center">
+        <p className="font-mono text-xs text-slate">
+          august 2026 — building doodlydoo, shipping iykykprints orders.
+        </p>
+
         <nav aria-label="Footer" className="flex flex-wrap justify-center gap-6">
           {navLinks.map((link) => (
             <a

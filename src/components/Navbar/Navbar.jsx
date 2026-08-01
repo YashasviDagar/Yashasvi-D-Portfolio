@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { scrollToId } from "../../utils/scroll";
 
 const links = [
-  { id: "now", label: "now" },
   { id: "work", label: "work" },
   { id: "stack", label: "stack" },
   { id: "contact", label: "contact" },
@@ -45,9 +44,16 @@ const Navbar = () => {
         <a
           href="#top"
           onClick={handleClick("top")}
-          className="shrink-0 font-mono text-sm tracking-tight text-bone transition-colors hover:text-filament"
+          aria-label="Scroll to top"
+          className="shrink-0 opacity-90 transition-opacity hover:opacity-100"
         >
-          yd
+          <img
+            src="/sprite/head-icon.png"
+            alt=""
+            width={24}
+            height={24}
+            className="pixelated h-6 w-6"
+          />
         </a>
 
         <ul className="flex min-w-0 gap-5 overflow-x-auto scrollbar-none font-mono text-sm text-slate">

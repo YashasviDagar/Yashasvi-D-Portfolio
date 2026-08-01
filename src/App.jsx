@@ -2,7 +2,6 @@ import Navbar from './components/Navbar/Navbar'
 import Cursor from './components/Cursor/Cursor'
 import PrintHead from './components/PrintHead/PrintHead'
 import Hero from './components/Hero/Hero'
-import Now from './components/Now/Now'
 import Stack from './components/Stack/Stack'
 import EarlierWork from './components/EarlierWork/EarlierWork'
 import Education from './components/Education/Education'
@@ -17,7 +16,6 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <Now />
         <EarlierWork />
         <Stack />
         <Education />
