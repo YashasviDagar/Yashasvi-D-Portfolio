@@ -14,12 +14,14 @@ function App() {
     <div id="top" className="relative pt-12 pb-8">
       <Cursor />
       <Navbar />
-      <Hero />
-      <Now />
-      <EarlierWork />
-      <Stack />
-      <Education />
-      <Contact />
+      <main>
+        <Hero />
+        <Now />
+        <EarlierWork />
+        <Stack />
+        <Education />
+        <Contact />
+      </main>
       <Footer />
       <PrintProgress />
     </div>

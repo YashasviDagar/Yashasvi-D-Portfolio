@@ -93,7 +93,7 @@ const Terminal = () => {
           autoComplete="off"
           spellCheck={false}
           aria-label="Terminal command input"
-          className="flex-1 bg-transparent text-bone outline-none"
+          className="flex-1 bg-transparent text-bone"
         />
       </form>
     </div>

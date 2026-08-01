@@ -1,11 +1,12 @@
 import Sprite from "../Sprite/Sprite";
+import { scrollToId } from "../../utils/scroll";
 
 const RESUME_URL =
   "https://drive.google.com/file/d/1ReRmyQoDxz6imVL8DRog1biIrZpn2tke/view?usp=sharing";
 
 const scrollToWork = (event) => {
   event.preventDefault();
-  document.getElementById("work")?.scrollIntoView({ behavior: "smooth" });
+  scrollToId("work");
 };
 
 const Hero = () => {

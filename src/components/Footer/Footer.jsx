@@ -1,4 +1,5 @@
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { scrollToId } from "../../utils/scroll";
 
 const navLinks = [
   { id: "now", label: "now" },
@@ -23,7 +24,7 @@ const socialLinks = [
 
 const handleScroll = (id) => (event) => {
   event.preventDefault();
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  scrollToId(id);
 };
 
 const Footer = () => {

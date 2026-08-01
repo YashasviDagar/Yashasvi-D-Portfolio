@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { scrollToId } from "../../utils/scroll";
 
 const links = [
   { id: "now", label: "now" },
@@ -32,7 +33,7 @@ const Navbar = () => {
 
   const handleClick = (id) => (event) => {
     event.preventDefault();
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    scrollToId(id);
   };
 
   return (
