@@ -10,7 +10,7 @@ import Footer from './components/Footer/Footer'
 
 function App() {
   return (
-    <div id="top" className="relative pt-12">
+    <div id="top" className="relative pt-14">
       <Cursor />
       <PrintHead />
       <Navbar />

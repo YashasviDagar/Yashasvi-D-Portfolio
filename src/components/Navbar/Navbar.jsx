@@ -39,21 +39,23 @@ const Navbar = () => {
     <header className="fixed top-0 z-50 w-full border-b border-bone/10 bg-ink-950/95">
       <nav
         aria-label="Primary"
-        className="mx-auto flex h-12 max-w-6xl items-center justify-between gap-6 px-4 sm:px-8"
+        className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-6 px-4 sm:px-8"
       >
         <a
           href="#top"
           onClick={handleClick("top")}
-          aria-label="Scroll to top"
-          className="shrink-0 opacity-90 transition-opacity hover:opacity-100"
+          className="flex shrink-0 items-baseline gap-2 opacity-90 transition-opacity hover:opacity-100"
         >
           <img
             src="/sprite/head-icon.png"
             alt=""
             width={24}
             height={24}
-            className="pixelated h-6 w-6"
+            className="pixelated h-12 w-12"
           />
+          <span className="font-mono text-sm tracking-tight text-bone">
+            yashasvi<span className="hidden sm:inline"> dagar</span>
+          </span>
         </a>
 
         <ul className="flex min-w-0 gap-5 overflow-x-auto scrollbar-none font-mono text-sm text-slate">
