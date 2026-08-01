@@ -14,6 +14,7 @@ const EarlierWork = () => {
               <img
                 src={project.image}
                 alt={`Screenshot of ${project.title}`}
+                loading="lazy"
                 className="h-44 w-full object-cover"
               />
               <div className="p-5">

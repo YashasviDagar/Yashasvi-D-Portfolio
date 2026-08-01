@@ -1,6 +1,6 @@
 // Project Section Logo's
-import stupify from "./assets/work_logo/stupify.png";
-import infinity from "./assets/work_logo/infinity.png";
+import stupify from "./assets/work_logo/stupify.jpg";
+import infinity from "./assets/work_logo/infinity.jpg";
 
 export const earlierWork = [
   {
