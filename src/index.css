@@ -6,11 +6,11 @@
 
 @theme {
   /* palette */
-  --color-ink-950: #1a1410;
-  --color-ink-900: #221b15;
+  --color-ink-950: #131313;
+  --color-ink-900: #1c1c1c;
   --color-bone: #ede6db;
   --color-filament: #ff5a18;
-  --color-slate: #6b615a;
+  --color-slate: #6b6b6b;
   --color-paper: #efe7d8;
   --color-paper-ink: #2a211a;
   --color-paper-line: #c9bca8;

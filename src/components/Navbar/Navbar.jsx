@@ -2,8 +2,6 @@ import { useEffect, useRef, useState } from "react";
 
 const links = [
   { id: "now", label: "now" },
-  { id: "iykyk", label: "iykyk" },
-  { id: "doodlydoo", label: "doodlydoo" },
   { id: "work", label: "work" },
   { id: "stack", label: "stack" },
   { id: "contact", label: "contact" },
