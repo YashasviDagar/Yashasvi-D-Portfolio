@@ -15,7 +15,7 @@ const Hero = () => {
       <div className="mx-auto flex max-w-3xl flex-col-reverse items-center justify-center gap-8 lg:flex-row lg:gap-10">
         <div className="max-w-xl text-center lg:text-left">
           <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-bone sm:text-5xl lg:text-6xl">
-            i build things, then i print the parts.
+            i write the code, then i ship to chaos.
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-slate">
             3rd-year CSE at VIT Vellore. Running iykykprints on the side,

@@ -1,6 +1,6 @@
 import Navbar from './components/Navbar/Navbar'
 import Cursor from './components/Cursor/Cursor'
-import PrintProgress from './components/PrintProgress/PrintProgress'
+import PrintHead from './components/PrintHead/PrintHead'
 import Hero from './components/Hero/Hero'
 import Now from './components/Now/Now'
 import Stack from './components/Stack/Stack'
@@ -11,8 +11,9 @@ import Footer from './components/Footer/Footer'
 
 function App() {
   return (
-    <div id="top" className="relative pt-12 pb-8">
+    <div id="top" className="relative pt-12">
       <Cursor />
+      <PrintHead />
       <Navbar />
       <main>
         <Hero />
@@ -23,7 +24,6 @@ function App() {
         <Contact />
       </main>
       <Footer />
-      <PrintProgress />
     </div>
   )
 }
