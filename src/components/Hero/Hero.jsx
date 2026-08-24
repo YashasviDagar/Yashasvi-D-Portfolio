@@ -24,9 +24,10 @@ const Hero = () => {
             to chaos.
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate">
-            3rd-year CSE at VIT Vellore.
+            CSE @ VIT Vellore.
             <br className="hidden sm:block" />
-            Running iykykprints on the side, building doodlydoo right now.
+            Turned a 3D printer into a live business. Now building real-time
+            applications from scratch.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-6 lg:justify-start">
             <a
