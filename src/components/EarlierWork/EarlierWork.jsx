@@ -11,12 +11,14 @@ const EarlierWork = () => {
         <div className="mt-10 grid gap-8 sm:grid-cols-2">
           {earlierWork.map((project) => (
             <article key={project.id} className="border border-bone/10 bg-ink-900">
-              <img
-                src={project.image}
-                alt={`Screenshot of ${project.title}`}
-                loading="lazy"
-                className="h-44 w-full object-cover"
-              />
+              {project.image && (
+                <img
+                  src={project.image}
+                  alt={`Screenshot of ${project.title}`}
+                  loading="lazy"
+                  className="h-44 w-full object-cover"
+                />
+              )}
               <div className="p-5">
                 <h3 className="font-mono text-lg text-bone">{project.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate">
@@ -28,14 +30,18 @@ const EarlierWork = () => {
                   ))}
                 </ul>
                 <div className="mt-5 flex gap-5 font-mono text-sm">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-bone transition-colors hover:text-filament"
-                  >
-                    code ↗
-                  </a>
+                  {project.github ? (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-bone transition-colors hover:text-filament"
+                    >
+                      code ↗
+                    </a>
+                  ) : (
+                    <span className="text-slate">private repo</span>
+                  )}
                   {project.webapp && (
                     <a
                       href={project.webapp}
