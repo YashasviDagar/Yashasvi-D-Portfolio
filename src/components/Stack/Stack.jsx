@@ -1,27 +1,46 @@
-const SHIPPED = [
-  { name: "html", used: "stupify, infinity" },
-  { name: "css", used: "stupify, infinity" },
-  { name: "javascript", used: "stupify, infinity" },
-  { name: "react", used: "stupify, infinity" },
-  { name: "tailwind css", used: "stupify, infinity, this site" },
-  { name: "vite", used: "this site" },
-  { name: "git", used: "every project" },
-  { name: "github", used: "every project" },
-  { name: "c++", used: "competitive programming" },
-  { name: "java", used: "competitive programming" },
-  { name: "python", used: "competitive programming" },
-];
-
-const LEARNING = [
-  "node.js",
-  "express",
-  "postgresql",
-  "websockets",
-  "jwt",
-  "bcrypt",
-  "typescript",
-  "next.js",
-  "mongodb",
+const SKILL_GROUPS = [
+  {
+    label: "languages",
+    items: [
+      { name: "javascript", used: "stupify, infinity" },
+      { name: "typescript", used: "" },
+      { name: "c++", used: "competitive programming" },
+      { name: "java", used: "competitive programming" },
+      { name: "python", used: "competitive programming" },
+    ],
+  },
+  {
+    label: "frontend",
+    items: [
+      { name: "html", used: "" },
+      { name: "css", used: "" },
+      { name: "react", used: "stupify, infinity, iykykprints" },
+      { name: "tailwind css", used: "stupify, infinity, this site" },
+      { name: "next.js", used: "" },
+    ],
+  },
+  {
+    label: "backend",
+    items: [
+      { name: "node.js", used: "" },
+      { name: "express", used: "" },
+      { name: "websockets", used: "doodlydoo" },
+      { name: "yjs", used: "doodlydoo" },
+      { name: "jwt", used: "" },
+      { name: "bcrypt", used: "" },
+    ],
+  },
+  {
+    label: "databases / tools",
+    items: [
+      { name: "postgresql", used: "doodlydoo" },
+      { name: "mongodb", used: "" },
+      { name: "git", used: "every project" },
+      { name: "github", used: "every project" },
+      { name: "vite", used: "this site" },
+      { name: "vercel", used: "iykykprints, this site" },
+    ],
+  },
 ];
 
 const COMPETITIVE = [
@@ -37,7 +56,7 @@ const COMPETITIVE = [
   },
 ];
 
-const ShippedRow = ({ name, used }) => (
+const SkillRow = ({ name, used }) => (
   <li
     tabIndex={0}
     className="group flex items-baseline justify-between gap-4 py-1 font-mono text-sm text-bone"
@@ -85,25 +104,16 @@ const Stack = () => {
         </h2>
 
         <div className="mt-10 grid gap-12 sm:grid-cols-2">
-          <div>
-            <p className="font-mono text-sm text-slate">shipped</p>
-            <ul className="mt-3">
-              {SHIPPED.map((item) => (
-                <ShippedRow key={item.name} {...item} />
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <p className="font-mono text-sm text-slate">learning</p>
-            <ul className="mt-3">
-              {LEARNING.map((item) => (
-                <li key={item} className="py-1 font-mono text-sm text-bone">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+          {SKILL_GROUPS.map((group) => (
+            <div key={group.label}>
+              <p className="font-mono text-sm text-slate">{group.label}</p>
+              <ul className="mt-3">
+                {group.items.map((item) => (
+                  <SkillRow key={item.name} {...item} />
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
         <div className="mt-14">
