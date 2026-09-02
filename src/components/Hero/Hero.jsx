@@ -2,7 +2,7 @@ import Sprite from "../Sprite/Sprite";
 import { scrollToId } from "../../utils/scroll";
 
 const RESUME_URL =
-  "https://drive.google.com/file/d/1ReRmyQoDxz6imVL8DRog1biIrZpn2tke/view?usp=sharing";
+  "https://drive.google.com/file/d/1rfUudAVnv5Appq8H_bznJQR-GxDdN5I9/view?usp=drive_link";
 
 const scrollToWork = (event) => {
   event.preventDefault();
